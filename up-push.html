@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="up-css.css">
+<!-- <script src="j.js"></script> -->
+
+</head>
+<body>
+
+<p class="shadow-text">Пушкин Александр Сергеевич</p>
+<button class="tablink" onclick="openPage('Home', this, 'red')"id="defaultOpen">I Происхождение</button>
+<button class="tablink" onclick="openPage('News', this, 'green')">II Образование</button>
+<button class="tablink" onclick="openPage('Contact', this, 'blue')">III Творчество</button>
+<button class="tablink" onclick="openPage('About', this, 'orange')">IV Последние годы жизни</button>
+
+<div id="Home" class="tabcontent">
+  <h3>I Происхождение</h3>
+
+  <p> Родился 6 июня 1799 года в Москве в дворянской помещьей семье.
+  </p>
+</div>
+
+<div id="News" class="tabcontent">
+  <h3>II Образование</h3>
+  <p>Императорский Царскосельский лицей</p> 
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>III Творчество</h3>
+  <p>Выдающийся русский писатель, основоположник русского литературного языка.</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>IV Последние годы жизни </h3>
+  <p> Жил в Питере, печатал журнал "Современник". Умер на дуэли 29 января 1837 года.</p>
+</div>
+
+
+<div class="hover-text-one">
+  <figure class="effect-text-two">
+    <img src="images/py.jpg" width="280px" height="370px"/>
+      <figcaption>
+	<h3>Интересный<span> факт</span></h3>
+	<p>Пушкин принимал участие в 90 дуэлях за всю свою жизнь.</p>
+      </figcaption>			
+  </figure>
+  <script>
+    function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
+  
+  // Получите элемент с id="defaultOpen" и нажмите на него
+  document.getElementById("defaultOpen").click();
+  </script>
+</div>
+</body>
+</html>

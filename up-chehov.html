@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="up-css.css">
+</head>
+<body>
+
+<p class="shadow-text">Николай Васильевич Гоголь</p>
+<button class="tablink" onclick="openPage('Home', this, 'red')"id="defaultOpen">I Происхождение</button>
+<button class="tablink" onclick="openPage('News', this, 'green')">II Образование</button>
+<button class="tablink" onclick="openPage('Contact', this, 'blue')">III Творчество</button>
+<button class="tablink" onclick="openPage('About', this, 'orange')">IV Последние годы жизни</button>
+
+<div id="Home" class="tabcontent">
+  <h3>I Происхождение</h3>
+
+  <p>Родился 29 января 1860 г. в Таганроге в семье купца третьей гильдии.
+  </p>
+</div>
+
+<div id="News" class="tabcontent">
+  <h3>II Образование</h3>
+  <p>Медицинский факультет Московского университета</p> 
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>III Творчество</h3>
+  <p>Рассказы Чехова наполнены сатирой и иронией, первый абсурдист в русской литературе.</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>IV Последние годы жизни </h3>
+  <p> В 1899 году переехал в Ялту из-за туберкулеза. Умер 15 июля 1904 г.</p>
+</div>
+
+
+<div class="hover-text-one">
+  <figure class="effect-text-two">
+    <img src="images/chehov.jpg" width="280px" height="370px"/>
+      <figcaption>
+	<h3>Интересный<span> факт</span></h3>
+	<p>Всю жизнь Чехов много занимался благотворительностью. </p>
+      </figcaption>			
+  </figure>
+  <script>
+    function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
+  
+  // Получите элемент с id="defaultOpen" и нажмите на него
+  document.getElementById("defaultOpen").click();
+  </script>
+</div>
+</body>
+</html>

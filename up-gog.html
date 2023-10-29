@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="up-css.css">
+<!-- <script src="j.js"></script> -->
+
+</head>
+<body>
+
+<p class="shadow-text">Николай Васильевич Гоголь</p>
+<button class="tablink" onclick="openPage('Home', this, 'red')"id="defaultOpen">I Происхождение</button>
+<button class="tablink" onclick="openPage('News', this, 'green')">II Образование</button>
+<button class="tablink" onclick="openPage('Contact', this, 'blue')">III Творчество</button>
+<button class="tablink" onclick="openPage('About', this, 'orange')">IV Последние годы жизни</button>
+
+<div id="Home" class="tabcontent">
+  <h3>I Происхождение</h3>
+
+  <p>Родился 1 апреля 1809 года в селе Сорочинцы Полтавской губернии в семье помещика. Гоголь был третьим ребенком, а всего в семье было 12 детей.
+    В школьные годы писатель не отличался особыми способностями в учебе.
+     Хорошо ему давались только уроки рисования и изучение русской словесности.
+  </p>
+</div>
+
+<div id="News" class="tabcontent">
+  <h3>II Образование</h3>
+  <p>Николай Васильевич Гоголь окончил Нежинскую гимназию в июне 1828 года,</p> 
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>III Творчество</h3>
+  <p>В наследие от него получен бесценный дар произведений, где он предстает то тонким сатириком,то мистиком.</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>IV Последние годы жизни </h3>
+  <p>Болел, сжег своё произвдение и умер  4 марта 1852 г.</p>
+</div>
+
+
+<div class="hover-text-one">
+  <figure class="effect-text-two">
+    <img src="images/unnamed.jpg" width="280px" height="370px"/>
+      <figcaption>
+	<h3>Интересный<span> факт</span></h3>
+	<p>23-24 февраля в доме А. П. Толстого в Москве писатель сжег тетради, среди которых была рукопись 2 тома «Мертвых душ»</p>
+      </figcaption>			
+  </figure>
+  <script>
+    function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
+  
+  // Получите элемент с id="defaultOpen" и нажмите на него
+  document.getElementById("defaultOpen").click();
+  </script>
+</div>
+</body>
+</html>
